@@ -1,15 +1,14 @@
-export default HelloComponent(){
-let i=null;
+export default  HelloComponent() {
+let i = null;
 
-if(i===true){
-i=true
-}else{
-i=false
+if (i === true) {
+i = true;
+} else {
+i = false;
 }
-return (<>
-
-<p>
-this is testing 
-</p>
-</>)
+return (
+<>
+<p>this is testing</p>
+</>
+);
 }
