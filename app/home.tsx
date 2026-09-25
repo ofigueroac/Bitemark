@@ -1,5 +1,6 @@
 export default HelloComponent(){
 let i=null;
+let holdingyou=false
 if(i===true){
 i=true
 }else{
