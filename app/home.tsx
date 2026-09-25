@@ -6,6 +6,8 @@ export default function HelloComponent() {
   } else {
     i = false;
   }
+  const stringx = i ? 'algo' : null;
+  stringx.toString();
   return (
     <>
       <p>this is testing</p>
