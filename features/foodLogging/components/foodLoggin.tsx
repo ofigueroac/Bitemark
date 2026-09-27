@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { foodCatalog } from '@/data/foodCatalog';
+import type { CatalogFood } from '@/domain/food';
 import {
   Item,
   ItemActions,
@@ -12,17 +12,7 @@ import {
   ItemTitle,
 } from '@/components/ui/item';
 
-const foods = foodCatalog.map((food) => ({
-  id: food.name,
-  name: food.name,
-  servingSize: food.servingSize,
-  calories:
-    food.macros.protein * 4 +
-    food.macros.carbohidrates * 4 +
-    food.macros.fat * 9,
-}));
-
-export default function FoodLogging() {
+export default function FoodLogging({ foods }: { foods: CatalogFood[] }) {
   const [foodName, setFoodName] = useState('');
 
   const visibleFoods = foods.filter((food) =>
@@ -65,7 +55,7 @@ export default function FoodLogging() {
 
       {visibleFoods.length === 0 ? (
         <p className="text-sm text-muted-foreground">
-          No foods match that name.
+          {foods.length === 0 ? 'No foods yet.' : 'No foods match that name.'}
         </p>
       ) : null}
     </div>
